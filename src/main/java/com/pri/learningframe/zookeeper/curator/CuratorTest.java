@@ -2,7 +2,6 @@ package com.pri.learningframe.zookeeper.curator;
 
 import org.apache.curator.framework.recipes.locks.InterProcessMutex;
 
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
