@@ -5,8 +5,6 @@ import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
 
 public class ObservableTest {
 
@@ -57,6 +55,7 @@ public class ObservableTest {
         };
 //        直接发送一个或指定的几个参数
         Observable<Object> observable = Observable.just("zs");
+//        订阅观察者
         observable.subscribe(observer);
         observable.subscribe(observer2);
 //        可以通过onNext持续发送多个参数
@@ -66,6 +65,7 @@ public class ObservableTest {
             public void subscribe(ObservableEmitter<Object> observableEmitter) throws Exception {
                 observableEmitter.onNext("hmm");
                 observableEmitter.onNext("ls");
+//                完成数据装填，准备发射
                 observableEmitter.onComplete();
             }
 

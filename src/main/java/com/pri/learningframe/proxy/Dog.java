@@ -1,10 +1,11 @@
 package com.pri.learningframe.proxy;
 
 @Color
-public class Dog implements Animal {
+public class Dog extends FourLegAnimal implements Animal {
 
-//    @Override
+    @Override
     public void run() {
-        System.out.println("开始奔跑。。。");
+        super.run();
+        System.out.println("狗狗开始奔跑。。。");
     }
 }
